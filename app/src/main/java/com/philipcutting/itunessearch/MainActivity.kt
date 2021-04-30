@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         val queryMap : Map<String,String> = mapOf(
             "term" to "red+velvet",
-            "media" to "musicq",
+            "media" to "music",
             "limit" to "500"
         )
 
