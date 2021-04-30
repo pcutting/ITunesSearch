@@ -1,13 +1,14 @@
 package com.philipcutting.itunessearch.utils
 
 import android.util.Log
+import org.jetbrains.annotations.NotNull
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
 import java.net.URL
 import javax.net.ssl.HttpsURLConnection
 
-val TAG = "Utilities.kt"
+const val TAG = "Utilities.kt"
 
 /*  Sample:
     var queryMap : Map<String,String> = mapOf(
@@ -33,12 +34,10 @@ private fun streamToString(inputStream: InputStream): String {
     var line: String
     var result = ""
     try {
-        do {
-            line = bufferReader.readLine()
-            if (line != null) {
-                result += line
+        result = bufferReader.readText()
+            .filter{
+                it != '\n'
             }
-        } while (line != null)
         inputStream.close()
     } catch (ex: Exception) {
         Log.i(TAG, "exception in streamToString: $ex")
