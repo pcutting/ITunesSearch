@@ -36,7 +36,7 @@ fun URL.buildUrl(queryMap: Map<String,String>):URL {
     return url
 }
 
-fun fetchItems(query: Map<String,String>, onComplete: (MutableList<StoreItem?>?) -> Unit) {
+fun fetchItems(query: Map<String,String>, onComplete: (MutableList<StoreItem>) -> Unit) {
     val permittedQueryKeys = listOf(
         "term", "country", "media", "entity", "attribute",
         "callback", "limit", "lang", "version", "explicit"

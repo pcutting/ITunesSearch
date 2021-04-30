@@ -15,7 +15,7 @@ private const val TAG =  "Model - StoreItem"
 
 data class StoreResultsList(
     var count: Int = 0,
-    var results: MutableList<StoreItem?> = mutableListOf()
+    var results: MutableList<StoreItem> = mutableListOf()
 ){
 
     constructor(json: JSONObject) : this(){
